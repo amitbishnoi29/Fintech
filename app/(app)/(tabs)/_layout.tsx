@@ -11,7 +11,7 @@ const AppLayout = () => {
         tabBarStyle: styles.tabBar,
       }}
     >
-      <Tabs.Screen name="home" options={{ headerShown: false }} />
+      <Tabs.Screen name="home" options={{ headerShown: true }} />
     </Tabs>
   );
 };
