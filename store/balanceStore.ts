@@ -30,7 +30,7 @@ export const useBalanceStore = create<BalanceState>()(
     }),
     {
       name: 'balance',
-      storage: createJSONStorage(() => zustandStorage),
+      // storage: createJSONStorage(() => zustandStorage),
     }
   )
 );

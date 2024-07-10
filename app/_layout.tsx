@@ -11,9 +11,10 @@ import { TouchableOpacity, Text, View, ActivityIndicator } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 const CLERK_PUBLISHABLE_KEY = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY;
 import * as SecureStore from 'expo-secure-store';
-// import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-// import { UserInactivityProvider } from '@/context/UserInactivity';
-// const queryClient = new QueryClient();
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { UserInactivityProvider } from '@/context/UserInactivity';
+
+const queryClient = new QueryClient();
 
 // Cache the Clerk JWT
 const tokenCache = {
@@ -138,8 +139,8 @@ const InitialLayout = () => {
         }}
       />
       <Stack.Screen name="(app)/(tabs)" options={{ headerShown: false }} />
-      {/* <Stack.Screen
-        name="(authenticated)/crypto/[id]"
+      <Stack.Screen
+        name="(app)/crypto/[id]"
         options={{
           title: '',
           headerLeft: () => (
@@ -162,11 +163,11 @@ const InitialLayout = () => {
         }}
       />
       <Stack.Screen
-        name="(authenticated)/(modals)/lock"
+        name="(app)/(modals)/lock"
         options={{ headerShown: false, animation: 'none' }}
       />
       <Stack.Screen
-        name="(authenticated)/(modals)/account"
+        name="(app)/(modals)/account"
         options={{
           presentation: 'transparentModal',
           animation: 'fade',
@@ -178,7 +179,7 @@ const InitialLayout = () => {
             </TouchableOpacity>
           ),
         }}
-      /> */}
+      />
     </Stack>
   );
 };
@@ -186,14 +187,14 @@ const InitialLayout = () => {
 const RootLayoutNav = () => {
   return (
     <ClerkProvider publishableKey={CLERK_PUBLISHABLE_KEY!} tokenCache={tokenCache}>
-      {/* <QueryClientProvider client={queryClient}> */}
-        {/* <UserInactivityProvider> */}
+      <QueryClientProvider client={queryClient}>
+        <UserInactivityProvider>
           <GestureHandlerRootView style={{ flex: 1 }}>
             <StatusBar style="light" />
             <InitialLayout />
           </GestureHandlerRootView>
-        {/* </UserInactivityProvider> */}
-      {/* </QueryClientProvider> */}
+        </UserInactivityProvider>
+      </QueryClientProvider>
     </ClerkProvider>
   );
 };

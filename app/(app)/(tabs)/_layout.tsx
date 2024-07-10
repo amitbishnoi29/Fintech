@@ -47,6 +47,7 @@ const Layout = () => {
         name="invest"
         options={{
           title: "Invest",
+          header: () => <CustomHeader />,
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="line-chart" size={size} color={color} />
           ),
@@ -56,6 +57,7 @@ const Layout = () => {
         name="transfers"
         options={{
           title: "Transfers",
+          header: () => <CustomHeader />,
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="exchange" size={size} color={color} />
           ),
@@ -76,6 +78,7 @@ const Layout = () => {
         name="lifestyle"
         options={{
           title: "Lifestyle",
+          header: () => <CustomHeader />,
           tabBarIcon: ({ size, color }) => (
             <FontAwesome name="th" size={size} color={color} />
           ),

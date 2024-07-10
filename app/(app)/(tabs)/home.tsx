@@ -58,7 +58,7 @@ const Page = () => {
           onPress={clearTransactions}
         />
         <RoundBtn icon={"list"} text={"Details"} />
-        {Platform.OS === "android" ? <Dropdown /> : <Text>IOS</Text>}
+        {/* {Platform.OS === "android" ? <Dropdown /> : <Text>IOS</Text>} */}
         {/* <Dropdown /> */}
       </View>
 

@@ -21,7 +21,7 @@ const CustomHeader = () => {
             backgroundColor: 'transparent',
           },
         ]}>
-        <Link href={'/(authenticated)/(modals)/account'} asChild>
+        <Link href={'(app)/(modals)/account'} asChild>
           <TouchableOpacity
             style={{
               width: 40,

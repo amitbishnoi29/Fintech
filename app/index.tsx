@@ -6,7 +6,7 @@ import { Link } from "expo-router";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 const Page = () => {
-  const [assets] = useAssets([require("@/assets/videos/intro.mp4")]);
+  const [assets] = useAssets([require("@/assets/videos/background.mp4")]);
 //   console.log(assets[0]);
 
   return (
